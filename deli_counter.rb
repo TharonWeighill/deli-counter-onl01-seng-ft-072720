@@ -1,4 +1,31 @@
-katz_deli = ["Moshe", "Fayge", "Rivki"]
+
+def take_a_number(current_line, name)
+  current_line.push(name)
+  puts "Welcome, #{name}. You are number #{current_line.length} in line."
+end
+
+def now_serving(current_line)
+  if current_line.length === 0
+    puts "There is nobody waiting to be served!"
+  else
+    puts "Currently serving #{current_line[0]}."
+    current_line.shift()
+  end
+end
+
+def line(current_line)
+  if current_line.length === 0
+    puts "The line is currently empty."
+  else
+    line_status = "The line is currently: "
+    current_line.each_with_index do |name, index|
+      line_status = line_status + "#{index + 1}. #{name} "
+    end
+  puts line_status.strip()
+  end
+end
+
+# katz_deli = ["Moshe", "Fayge", "Rivki"]
 
 
 def line(array)
@@ -21,13 +48,11 @@ def line_simple(array)
   current_line = "The simple line is currently:"
   array.each.with_index(1) do |value, indexemus|  
     current_line << " #{indexemus}. #{value},"    
-     end 
+    end 
   puts current_line
 end 
   
-line_simple(katz_deli)  
-
-
+line_simple(katz_deli)
 
 
 def take_a_number(line, new_person)
